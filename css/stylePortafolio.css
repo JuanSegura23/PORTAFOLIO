@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.nav {
+    background-color: #216666;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    font-family: 'Cinzel', serif;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 29px;
+    text-transform: uppercase;
+    width: 50%;
+}
+.logo:hover{
+    color: #15b38d;
+    letter-spacing: -1px;
+    font-size: 45px;
+    font-family: 'Luckiest Guy', cursive;
+    -webkit-text-stroke: 1px black;
+}
+
+.lista {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.lista__li {
+    list-style: none;
+}
+
+.lista__a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.lista__a:hover {
+    color: #4c2a62;
+}
+
+.lista__a::after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: white;
+    transition: width .3s;
+}
+
+.lista__a:hover::after {
+    width: 100%;
+}
+
+.burger {
+    display: none
+}
+
+.burger div {
+    height: 3px;
+    width: 25px;
+    margin: 5px 0 5px 0;
+    border-radius: 20px;
+    background-color: white;
+    transition: all 2s ease-out;
+}
+
+@media screen and (max-width: 1024px) {
+    .lista {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .lista {
+        position: absolute;
+        right: 0px;
+        top: 8vh;
+        height: 92vh;
+        width: 50%;
+        background-color: #4B0082;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        transform: translate(100%);
+        transition: transform 1s;
+    }
+
+    .lista__li {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    .lista--activada .lista__li {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    .lista--activada {
+        transform: translate(0%);
+    }
+
+    .toggle .burger__line1 {
+        transform: translate(0px, 9px) rotate(-45deg);
+    }
+
+    .toggle .burger__line2 {
+        opacity: 0;
+    }
+
+    .toggle .burger__line3 {
+        transform: translate(0px, -7px) rotate(45deg);
+    }
+}
+
+/* ---------------------------------------------------texto efecto hover */
+.div__diseñamos {
+    background-color: #cdd2cc;
+    height: 570px;
+    font-family: 'Cinzel', serif;
+}
+
+.div__centrado {
+    padding-top: 55px;
+}
+
+.text1 {
+    text-align: center;
+    display: inline-block;
+    transition: .5s;
+}
+
+.text {
+    margin: 45px 87px;
+}
+
+.text2 {
+    margin: 6px 24%;
+}
+
+.text3 {
+    margin: 44px 20px;
+    margin-left: 716px;
+}
+
+.text1 span {
+    background: #591c7c8f;
+    width: 65px;
+    height: 80px;
+    display: block;
+    line-height: 79px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #622a5a;
+    font-size: 52px;
+    float: left;
+    transition: .5s;
+}
+
+.text1 span:nth-child(1) {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.text1:hover span:nth-child(odd) {
+    transform: skewY(-15deg);
+    color: #010101;
+    box-shadow: 0 60px 20px rgba(0, 0, 0, .1);
+}
+
+.text1:hover span:nth-child(even) {
+    transform: skewY(-15deg);
+    color: #216666;
+    box-shadow: 0 60px 20px rgba(0, 0, 0, .1), inset 0px 0 30px rgba(0, 0, 0, .2);
+}
+
+.text1:hover {
+    transform: rotateX(35deg);
+}
+
+/* -------------------------------------------------tarjetas html - css - js */
+
+.div_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 735px;
+    background: #518988;
+}
+
+.container {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+.container .card {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: #8c6ca0;
+    margin: 30px 15px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border: 3px solid #622a5a;
+    
+    
+}
+
+.container .card:hover {
+    height: 465px;
+    background: #693e84;
+    border: 8px solid #622a5a;
+    margin: 30px 13px;
+    padding: 20px 12px;
+
+}
+
+.div_compartido {
+    position: relative;
+    height: 300px;
+    width: 250px;
+    top: -105px;
+    left: 21px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 35%;
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 48px;
+    font-family: 'Luckiest Guy', cursive !important;
+}
+
+/* --------------------------boton html */
+.botton1 {
+    background-color: black;
+    border: 6px solid #e44d26
+}
+
+.bot_h1 {
+    color: #e44d26;
+}
+
+.botton1:hover {
+    background-color: #e44d26;
+    border: 13px solid black;
+    font-size: 40px;
+    border-radius: 50%;
+    font-family: 'Luckiest Guy', cursive !important;
+}
+
+.bot_h1:hover {
+    color: black;
+}
+
+.card:hover .botton1:hover {
+    background-color: #e44d26;
+    border: 13px solid black;
+    font-size: 40px;
+    border-radius: 50%;
+    font-family: 'Luckiest Guy', cursive !important;
+}
+
+.card:hover  .bot_h1:hover {
+    color: black;
+}
+
+/* ------------------------boton css */
+
+.botton2 {
+    background-color: black;
+    border: 6px solid #0066b6
+}
+
+.bot_h2 {
+    color: #0066b6;
+}
+
+.botton2:hover {
+    background-color: #0066b6;
+    border: 13px solid black;
+    font-size: 40px;
+    border-radius: 50%;
+    font-family: 'Luckiest Guy', cursive !important;
+}
+
+.bot_h2:hover {
+    color: black
+}
+
+/* -------------------------boton js */
+
+.botton3 {
+    background-color: black;
+    border: 6px solid #ead41c;
+}
+
+.bot_h3 {
+    color: #ead41c;
+}
+
+.botton3:hover {
+    background-color: #ead41c;
+    border: 13px solid black;
+    font-size: 40px;
+    border-radius: 50%;
+    font-family: 'Luckiest Guy', cursive !important;
+}
+
+.bot_h3:hover {
+    color: black;
+}
+
+.h1_compartido {
+    padding-top: 52px;
+}
+
+.h1_compartido:hover {
+    padding-top: 75px;
+    margin-bottom: 10px;
+}
+.card:hover .h1_compartido{
+    padding-top: 90px;
+}
+
+.content {
+    position: relative;
+    margin-top: -120px;
+    padding: 10px 15px;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    height: 300px;
+    width: 270px;
+    
+}
+.h2__style{
+    text-align: center;
+    font-size: 34px;
+    margin-top: -20px;
+    font-family: 'Crimson Text', serif, !important;
+}
+
+.lista__html{
+    font-size: 23px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 50px;
+    font-family: 'Crimson Text', serif, !important;
+}
+.lis__html{
+margin-bottom: 7px;
+}
+.a-a{
+    margin-top: 25px;
+}
+
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+/* ------------------------------------------------------ficha tecnico en sistemas---------------------------------------------------------- */
+
+.body__tecnico{
+    display: flex;
+    height: 85vh;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.caratainer{
+    position: relative;
+    width: 600px;
+    height: 350px;
+    margin-left: 95px;
+}
+
+.caratainer .cara{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.caratainer .cara span{
+    width: 200px;
+    /* width: 150px; */
+    height: 100%;
+    transition: .5s;
+    background-color: #333;
+    
+}
+
+.caratainer .cara1 span{
+    background-image: url(../img/lol-tecnico.jpg);
+}
+
+.caratainer:hover .cara1 span{
+    transform: rotatex(90deg)translateY(-50%);
+}
+
+.caratainer .cara2 span{
+background-image: url(../img/lol-placa.jpg);
+transform-origin: bottom;
+transform: rotatex(90deg)translateY(50%);
+}
+
+.caratainer:hover .cara2 span{
+    transform: rotateX(0deg)translateY(0);
+}
+
+.caratainer .cara span:nth-child(1){
+    background-position-x:  0; 
+    transition-delay:0s ;
+}
+.caratainer .cara span:nth-child(2){
+    background-position-x:-200 ;
+    transition-delay:.1s ;
+}
+.caratainer .cara span:nth-child(3){
+    background-position-x:-400 ;
+    transition-delay:.2s ;
+}
+.caratainer .cara span:nth-child(4){
+    background-position-x:-600 ;
+    transition-delay:.3s ;
+}
+/* ------------------contenedor de toda la ficha de tecnico en sistemas---- */
+.tecnico__tecnico{
+    display: flex;
+    background-color: #4a2364cc;
+}
+ 
+/* -------------------------------------------------------------------------------------------texto tecnico en sistemas */
+.letras__div{
+    margin-top: 95px;
+    font-family: 'Crimson Text', serif;
+}
+
+.tecnico__h1{
+    text-align: center;
+    font-size: 46px;
+}
+
+.tecnico__p{
+    padding: 33px 75px 0px 112px;
+    font-size: 25px;
+    color: #b195e3;;
+}
+
+.tecnico__h1:hover {
+    text-align: center;
+    font-size: 55px;
+    font-family: 'Luckiest Guy', cursive;
+    color: #b195e3;
+    -webkit-text-stroke: 1.5px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Cinzel', serif;
+    src: url("./font/Cinzel-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: 'Luckiest Guy', cursive;
+    src: url(./font/LuckiestGuy-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Crimson Text', serif;
+    src: url(./font/CrimsonText-Bold.ttf);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------footer----------------------------------------------------------------------------- */
+.listo{
+    background-color: #4a2364cc;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+ }
+ .listo__h2{
+    font-size: 57px;
+    margin-bottom: 1em;
+}
+
+.a__entrar{
+    display: inline-block;
+    padding: 0.6em;
+    border-radius: 10px;
+    background-color: #518988;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-decoration: none;
+ }
+ /* --------------------------------------------------------boton color aleatorio  */
+
+ .colorido{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 1.5em;
+    border-radius: 0.3em;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px;
+ }
+ .color__nuevo{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    margin : 5px;
+    font-size: 100px;
+    border-radius: 50%;
+    background-color: black;
+ }
+ 
+ .nuevos_colores{
+   display: flex;
+   flex-wrap: wrap;
+   background-color: #518988;
+ }
+
+ .colorContinuo{
+    height: 250px;
+    background-color: #518988;
+ }
+
+
+
+
+
+
+
+ /* --------------------------------- */
+
+
+.aaaaaaaaa {
+    height: 500px;
+}
